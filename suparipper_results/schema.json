@@ -1,0 +1,1088 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "title": "standard public schema",
+    "version": "13.0.4"
+  },
+  "host": "rfwijgxlsjivfhoalmns.supabase.co:443",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/vnd.pgrst.object+json;nulls=stripped",
+    "application/vnd.pgrst.object+json",
+    "text/csv"
+  ],
+  "produces": [
+    "application/json",
+    "application/vnd.pgrst.object+json;nulls=stripped",
+    "application/vnd.pgrst.object+json",
+    "text/csv"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "produces": [
+          "application/openapi+json",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "OpenAPI description (this document)",
+        "tags": [
+          "Introspection"
+        ]
+      }
+    },
+    "/bizus": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.bizus.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.conteudo"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.titulo"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.materia"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.username"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/bizus"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "bizus"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.bizus"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "bizus"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.bizus.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.conteudo"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.titulo"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.materia"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.username"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "bizus"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.bizus.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.conteudo"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.titulo"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.materia"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.bizus.username"
+          },
+          {
+            "$ref": "#/parameters/body.bizus"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "bizus"
+        ]
+      }
+    },
+    "/profiles": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.username"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.descricao"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.link1"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.link2"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/profiles"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.profiles"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.username"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.descricao"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.link1"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.link2"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.username"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.descricao"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.link1"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.link2"
+          },
+          {
+            "$ref": "#/parameters/body.profiles"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      }
+    },
+    "/comments": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.comments.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.bizu_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.content"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/comments"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "comments"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.comments"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "comments"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.comments.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.bizu_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.content"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "comments"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.comments.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.bizu_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.content"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.comments.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.comments"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "comments"
+        ]
+      }
+    },
+    "/likes": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.likes.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.bizu_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/likes"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "likes"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.likes"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "likes"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.likes.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.bizu_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "likes"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.likes.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.user_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.bizu_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.likes.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.likes"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "likes"
+        ]
+      }
+    },
+    "/rpc/set_users_id_default": {
+      "get": {
+        "produces": [
+          "application/json",
+          "application/vnd.pgrst.object+json;nulls=stripped",
+          "application/vnd.pgrst.object+json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "(rpc) set_users_id_default"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "args",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "$ref": "#/parameters/preferParams"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.pgrst.object+json;nulls=stripped",
+          "application/vnd.pgrst.object+json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "(rpc) set_users_id_default"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "bizus": {
+      "required": [
+        "id",
+        "conteudo"
+      ],
+      "properties": {
+        "id": {
+          "default": "extensions.uuid_generate_v4()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "user_id": {
+          "default": "auth.uid()",
+          "format": "uuid",
+          "type": "string"
+        },
+        "conteudo": {
+          "format": "text",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "titulo": {
+          "format": "text",
+          "type": "string"
+        },
+        "materia": {
+          "format": "text",
+          "type": "string"
+        },
+        "username": {
+          "format": "text",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "profiles": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "email": {
+          "format": "text",
+          "type": "string"
+        },
+        "username": {
+          "format": "text",
+          "type": "string"
+        },
+        "descricao": {
+          "format": "text",
+          "type": "string"
+        },
+        "link1": {
+          "format": "text",
+          "type": "string"
+        },
+        "link2": {
+          "format": "text",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "comments": {
+      "required": [
+        "id",
+        "content"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "bizu_id": {
+          "description": "Note:\nThis is a Foreign Key to `bizus.id`.<fk table='bizus' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "user_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "content": {
+          "format": "text",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "likes": {
+      "required": [
+        "id",
+        "user_id",
+        "bizu_id"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "user_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "bizu_id": {
+          "description": "Note:\nThis is a Foreign Key to `bizus.id`.<fk table='bizus' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "parameters": {
+    "preferParams": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [],
+      "in": "header",
+      "type": "string"
+    },
+    "preferReturn": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "return=representation",
+        "return=minimal",
+        "return=none"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "preferCount": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "count=none"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "preferPost": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "return=representation",
+        "return=minimal",
+        "return=none",
+        "resolution=ignore-duplicates",
+        "resolution=merge-duplicates"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "select": {
+      "name": "select",
+      "description": "Filtering Columns",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "on_conflict": {
+      "name": "on_conflict",
+      "description": "On Conflict",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "order": {
+      "name": "order",
+      "description": "Ordering",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "range": {
+      "name": "Range",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "header",
+      "type": "string"
+    },
+    "rangeUnit": {
+      "name": "Range-Unit",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "default": "items",
+      "in": "header",
+      "type": "string"
+    },
+    "offset": {
+      "name": "offset",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "limit": {
+      "name": "limit",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.bizus": {
+      "name": "bizus",
+      "description": "bizus",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/bizus"
+      }
+    },
+    "rowFilter.bizus.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.bizus.user_id": {
+      "name": "user_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.bizus.conteudo": {
+      "name": "conteudo",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.bizus.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.bizus.titulo": {
+      "name": "titulo",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.bizus.materia": {
+      "name": "materia",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.bizus.username": {
+      "name": "username",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.profiles": {
+      "name": "profiles",
+      "description": "profiles",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/profiles"
+      }
+    },
+    "rowFilter.profiles.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.email": {
+      "name": "email",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.username": {
+      "name": "username",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.descricao": {
+      "name": "descricao",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.link1": {
+      "name": "link1",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.link2": {
+      "name": "link2",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.comments": {
+      "name": "comments",
+      "description": "comments",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/comments"
+      }
+    },
+    "rowFilter.comments.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.comments.bizu_id": {
+      "name": "bizu_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.comments.user_id": {
+      "name": "user_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.comments.content": {
+      "name": "content",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.comments.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.likes": {
+      "name": "likes",
+      "description": "likes",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/likes"
+      }
+    },
+    "rowFilter.likes.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.likes.user_id": {
+      "name": "user_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.likes.bizu_id": {
+      "name": "bizu_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.likes.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    }
+  },
+  "externalDocs": {
+    "description": "PostgREST Documentation",
+    "url": "https://postgrest.org/en/v\"13\"/references/api.html"
+  }
+}

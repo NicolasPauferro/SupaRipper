@@ -1,0 +1,11 @@
+Olá , esse é um projeto chamado SupaRipper, ultimamente o vibecode tem predominado o ambiente digital e uma constante entre vários projetos de Vibe Coding é o Supabase!
+
+Pensando nisso, essa ferramenta será criada para testar a funcionalidade de banco de dados do Supabase dados sua URL e uma Apikey, o projeto será todo criado em shell script (bash)
+
+o script deve conter:
+Identificação de todas as tabelas (Identificando quais são 403 e salvando resultados de tabelas abertas em .json)
+Identificação de todas as funções 
+Identificação se o endpoint de registro é aberto (qualquer um pode se registrar)
+Identificação se o auth é possível (e se for possível, usar o bearer token do Auth que é superior ao anon)
+Identificação da possibilidade de edição/adição/delete de dados das tabelas
+

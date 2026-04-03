@@ -1,0 +1,41 @@
+{
+  "id": "2197599b-bc5e-49da-920a-8f498b22269f",
+  "aud": "authenticated",
+  "role": "authenticated",
+  "email": "bianca-salvador@tuamaeaquelaursa.com",
+  "phone": "",
+  "confirmation_sent_at": "2026-04-03T19:24:52.362551263Z",
+  "app_metadata": {
+    "provider": "email",
+    "providers": [
+      "email"
+    ]
+  },
+  "user_metadata": {
+    "email": "bianca-salvador@tuamaeaquelaursa.com",
+    "email_verified": false,
+    "phone_verified": false,
+    "sub": "2197599b-bc5e-49da-920a-8f498b22269f"
+  },
+  "identities": [
+    {
+      "identity_id": "31cc9781-f9b4-454f-904e-fcf44396364b",
+      "id": "2197599b-bc5e-49da-920a-8f498b22269f",
+      "user_id": "2197599b-bc5e-49da-920a-8f498b22269f",
+      "identity_data": {
+        "email": "bianca-salvador@tuamaeaquelaursa.com",
+        "email_verified": false,
+        "phone_verified": false,
+        "sub": "2197599b-bc5e-49da-920a-8f498b22269f"
+      },
+      "provider": "email",
+      "last_sign_in_at": "2026-04-03T19:24:52.349674887Z",
+      "created_at": "2026-04-03T19:24:52.349723Z",
+      "updated_at": "2026-04-03T19:24:52.349723Z",
+      "email": "bianca-salvador@tuamaeaquelaursa.com"
+    }
+  ],
+  "created_at": "2026-04-03T19:24:52.31654Z",
+  "updated_at": "2026-04-03T19:24:54.142719Z",
+  "is_anonymous": false
+}
