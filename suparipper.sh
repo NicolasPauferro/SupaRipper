@@ -10,27 +10,34 @@ NC='\033[0m' # No Color
 # Default values
 URL=""
 APIKEY=""
+BEARER=""
 EMAIL="suparipper_$(date +%s)@gmail.com"
 PASSWORD="SupaRipperPassword123!"
 OUTPUT_DIR="suparipper_results"
 
 # Usage function
 usage() {
-    echo -e "${YELLOW}Usage: $0 -u <SUPABASE_URL> -k <SUPABASE_KEY> [-e <EMAIL>] [-p <PASSWORD>]${NC}"
-    echo -e "Example: $0 -u https://xyz.supabase.co -k your_anon_key -e test@gmail.com -p MyPass123"
+    echo -e "${YELLOW}Usage: $0 -u <SUPABASE_URL> -k <SUPABASE_KEY> [-b <BEARER_TOKEN>] [-e <EMAIL>] [-p <PASSWORD>]${NC}"
+    echo -e "Example: $0 -u https://xyz.supabase.co -k your_anon_key -b your_user_jwt -e test@gmail.com -p MyPass123"
     exit 1
 }
 
 # Parse flags
-while getopts "u:k:e:p:" opt; do
+while getopts "u:k:b:e:p:" opt; do
     case $opt in
         u) URL=$OPTARG ;;
         k) APIKEY=$OPTARG ;;
+        b) BEARER=$OPTARG ;;
         e) EMAIL=$OPTARG ;;
         p) PASSWORD=$OPTARG ;;
         *) usage ;;
     esac
 done
+
+# If Bearer is not provided, default to APIKEY (anon mode)
+if [[ -z "$BEARER" ]]; then
+    BEARER="$APIKEY"
+fi
 
 if [[ -z "$URL" || -z "$APIKEY" ]]; then
     usage
@@ -49,7 +56,7 @@ check_registration() {
 
     local response=$(curl -s -X POST "${URL}/auth/v1/signup" \
         -H "apikey: ${APIKEY}" \
-        -H "Authorization: Bearer ${APIKEY}" \
+        -H "Authorization: Bearer ${BEARER}" \
         -H "Content-Type: application/json" \
         -d "{ \"email\": \"${EMAIL}\", \"password\": \"${PASSWORD}\" }")
 
@@ -61,7 +68,7 @@ check_registration() {
         echo -e "${BLUE}[*] Checking if login is possible with credentials...${NC}"
         local login_response=$(curl -s -X POST "${URL}/auth/v1/token?grant_type=password" \
             -H "apikey: ${APIKEY}" \
-            -H "Authorization: Bearer ${APIKEY}" \
+            -H "Authorization: Bearer ${BEARER}" \
             -H "Content-Type: application/json" \
             -d "{ \"email\": \"${EMAIL}\", \"password\": \"${PASSWORD}\" }")
         
@@ -82,7 +89,7 @@ discover_schema() {
     echo -e "${BLUE}[*] Fetching OpenAPI schema...${NC}"
     local schema=$(curl -s -X GET "${URL}/rest/v1/" \
         -H "apikey: ${APIKEY}" \
-        -H "Authorization: Bearer ${APIKEY}")
+        -H "Authorization: Bearer ${BEARER}")
 
     if [[ -z "$schema" || "$schema" != "{"* ]]; then
         echo -e "${RED}[-] Could not fetch or parse OpenAPI schema. Access might be restricted.${NC}"
@@ -106,14 +113,14 @@ discover_schema() {
 
 # 3. Test Table Accessibility and CRUD
 test_tables() {
-    echo -e "${BLUE}[*] Testing table permissions (using provided API Key)...${NC}"
+    echo -e "${BLUE}[*] Testing table permissions (using provided Bearer Token)...${NC}"
     
     for table in $TABLES; do
         echo -e "${BLUE}-----------------------------------${NC}"
         echo -e "${BLUE}[...] Audit: ${table}${NC}"
         
-        # As requested, we stay with the provided APIKey (anon key) for consistency
-        local headers=(-H "apikey: ${APIKEY}" -H "Authorization: Bearer ${APIKEY}")
+        # Consistent with provided flags
+        local headers=(-H "apikey: ${APIKEY}" -H "Authorization: Bearer ${BEARER}")
 
         # 3.1 Test Read (GET)
         local read_resp=$(curl -s -o "${OUTPUT_DIR}/tmp_read.json" -w "%{http_code}" -X GET "${URL}/rest/v1/${table}?select=*" "${headers[@]}")

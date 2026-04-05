@@ -30,12 +30,13 @@ Make sure you have `curl` and `jq` installed (if you don't, are you even coding?
 
 ```bash
 chmod +x suparipper.sh
-./suparipper.sh -u https://vibe-check.supabase.co -k your_anon_key
+./suparipper.sh -u https://vibe-check.supabase.co -k your_anon_key -b your_user_jwt
 ```
 
 ### Options:
 - `-u`: The Supabase URL (mandatory).
 - `-k`: The API Key / Anon Key (mandatory).
+- `-b`: Custom Bearer Token / User JWT (optional, defaults to API Key).
 - `-e`: Custom email for registration testing (optional).
 - `-p`: Custom password for registration testing (optional).
 
