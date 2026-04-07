@@ -11,8 +11,8 @@ NC='\033[0m' # No Color
 URL=""
 APIKEY=""
 BEARER=""
-EMAIL="suparipper_$(date +%s)@gmail.com"
-PASSWORD="SupaRipperPassword123!"
+EMAIL="test_$(date +%s)@gmail.com"
+PASSWORD="caralho123"
 OUTPUT_DIR="suparipper_results"
 
 # Usage function
