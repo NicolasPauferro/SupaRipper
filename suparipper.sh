@@ -12,7 +12,7 @@ URL=""
 APIKEY=""
 BEARER=""
 EMAIL="test_$(date +%s)@gmail.com"
-PASSWORD="caralho123"
+PASSWORD="Password231!"
 OUTPUT_DIR="suparipper_results"
 
 # Usage function
